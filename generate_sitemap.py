@@ -1,69 +1,195 @@
-import os
+from pathlib import Path
+from datetime import date
 import xml.etree.ElementTree as ET
-from datetime import datetime
+import tempfile
+import os
 
-# Define the base domain for the sitemap URLs
-DOMAIN = "https://www.therpia.com"
+# =========================
+# Configuration
+# =========================
+DOMAIN = "https://therpia.cl"
+PROJECT_ROOT = Path("/Users/NickA/8. Therpia").resolve()
+SITEMAP_FILENAME = "sitemap.xml"
 
-# Define directories that should be excluded from search
-EXCLUDE_DIRS = {'.git', 'strategy'}
+# Directories to exclude completely
+EXCLUDE_DIRS = {
+    ".git",
+    ".github",
+    ".vscode",
+    "__pycache__",
+    "node_modules",
+    "strategy",
+    "partials",
+}
 
-def generate_sitemap(directory_path="."):
+# Specific files to exclude
+EXCLUDE_FILES = {
+    "404.html",
+    "og-image.html",
+    SITEMAP_FILENAME,
+}
+
+# Exclude files that start with these prefixes
+EXCLUDE_PREFIXES = (
+    "test-",
+    "_",
+    "draft-",
+    "backup-",
+)
+
+# Only include these file types
+INCLUDE_EXTENSIONS = {".html"}
+
+
+def should_exclude_dir(path: Path) -> bool:
+    return path.name in EXCLUDE_DIRS or path.name.startswith(".")
+
+
+def should_include_file(path: Path) -> bool:
+    if path.suffix.lower() not in INCLUDE_EXTENSIONS:
+        return False
+    if path.name in EXCLUDE_FILES:
+        return False
+    if path.name.startswith("."):
+        return False
+    if any(path.name.startswith(prefix) for prefix in EXCLUDE_PREFIXES):
+        return False
+    return True
+
+
+def file_path_to_url(file_path: Path, root: Path, domain: str) -> str:
+    rel_path = file_path.relative_to(root).as_posix()
+
+    # Homepage
+    if rel_path == "index.html":
+        return f"{domain}/"
+
+    # Folder index pages
+    if rel_path.endswith("/index.html"):
+        folder_path = rel_path[:-10].rstrip("/")
+        return f"{domain}/{folder_path}/"
+
+    # Standard html pages
+    return f"{domain}/{rel_path}"
+
+
+def get_priority(url: str) -> str:
     """
-    Generates a sitemap.xml file by finding all HTML files in the given directory and subdirectories.
+    Optional sitemap priority values.
+    These are hints only. Google may ignore them.
     """
-    print(f"Generating sitemap for {directory_path}...")
-    
-    # Create the root xml element
-    urlset = ET.Element("urlset", xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
+    path = url.replace(DOMAIN, "")
 
-    # Walk through the directory
-    for root, dirs, files in os.walk(directory_path):
-        # Modify dirs in-place to skip excluded directories
-        dirs[:] = [d for d in dirs if d not in EXCLUDE_DIRS and not d.startswith('.')]
-        
-        for file in files:
-            if file.endswith(".html"):
-                file_path = os.path.join(root, file)
-                
-                # Get the relative path from the base directory
-                rel_path = os.path.relpath(file_path, directory_path)
-                
-                # Convert the relative path to a URL path format
-                url_path = rel_path.replace(os.path.sep, '/')
-                
-                # Standardize index.html paths to just the trailing slash
-                if url_path == "index.html":
-                    loc = DOMAIN + "/"
-                elif url_path.endswith("/index.html"):
-                    loc = f"{DOMAIN}/{url_path[:-10]}"
-                else:
-                    loc = f"{DOMAIN}/{url_path}"
-                
-                # Get last modified time of the html file
-                try:
-                    mtime = os.path.getmtime(file_path)
-                    lastmod = datetime.fromtimestamp(mtime).strftime('%Y-%m-%d')
-                except Exception as e:
-                    print(f"Could not read mtime for {file_path}: {e}")
-                    lastmod = datetime.now().strftime('%Y-%m-%d')
-                
-                # Add the URL element to the sitemap XML
-                url_elem = ET.SubElement(urlset, "url")
-                ET.SubElement(url_elem, "loc").text = loc
-                ET.SubElement(url_elem, "lastmod").text = lastmod
-                print(f"Added {loc}")
+    if path == "/":
+        return "1.0"
 
-    # Generate the XML string with proper declaration
-    # In python 3.9+ we could use ET.indent, but string replace is safer across versions
-    xml_str = '<?xml version="1.0" encoding="UTF-8"?>\n' + ET.tostring(urlset, encoding='unicode', method='xml')
+    high_priority_sections = (
+        "/servicios/",
+        "/guias-espirituales/",
+        "/comunidad/",
+        "/contacto/",
+        "/que-es-therpia/",
+    )
 
-    sitemap_path = os.path.join(directory_path, "sitemap.xml")
-    with open(sitemap_path, "w", encoding='utf-8') as f:
-        f.write(xml_str)
-        
-    print(f"Sitemap generated successfully at {sitemap_path}")
+    if path in high_priority_sections:
+        return "0.9"
+
+    if path.startswith("/servicios/"):
+        return "0.8"
+
+    if path.startswith("/guias-espirituales/"):
+        return "0.8"
+
+    return "0.7"
+
+
+def collect_html_files(root: Path) -> list[Path]:
+    html_files = []
+
+    for current_root, dirs, files in os.walk(root):
+        current_root_path = Path(current_root)
+
+        # Filter directories in-place so os.walk skips them
+        dirs[:] = sorted(
+            d for d in dirs
+            if not should_exclude_dir(current_root_path / d)
+        )
+
+        for filename in sorted(files):
+            file_path = current_root_path / filename
+
+            if not should_include_file(file_path):
+                continue
+
+            if file_path.is_symlink():
+                continue
+
+            html_files.append(file_path.resolve())
+
+    return sorted(html_files)
+
+
+def generate_sitemap(root: Path = PROJECT_ROOT, domain: str = DOMAIN) -> Path:
+    root = root.resolve()
+
+    if not root.exists() or not root.is_dir():
+        raise ValueError(f"Invalid project root: {root}")
+
+    urlset = ET.Element(
+        "urlset",
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    )
+
+    seen_urls = set()
+    files = collect_html_files(root)
+
+    for file_path in files:
+        try:
+            loc = file_path_to_url(file_path, root, domain)
+
+            if loc in seen_urls:
+                print(f"Skipping duplicate URL: {loc}")
+                continue
+
+            seen_urls.add(loc)
+
+            mtime = file_path.stat().st_mtime
+            lastmod = date.fromtimestamp(mtime).isoformat()
+
+            url_elem = ET.SubElement(urlset, "url")
+            ET.SubElement(url_elem, "loc").text = loc
+            ET.SubElement(url_elem, "lastmod").text = lastmod
+            ET.SubElement(url_elem, "priority").text = get_priority(loc)
+
+            print(f"Added: {loc}")
+
+        except Exception as e:
+            print(f"Skipping {file_path} because of error: {e}")
+
+    if hasattr(ET, "indent"):
+        ET.indent(urlset, space="    ", level=0)
+
+    sitemap_path = root / SITEMAP_FILENAME
+
+    # Atomic write: temp file first, then replace
+    with tempfile.NamedTemporaryFile(
+        mode="wb",
+        delete=False,
+        dir=root,
+        prefix="sitemap_",
+        suffix=".xml"
+    ) as tmp_file:
+        temp_path = Path(tmp_file.name)
+        tree = ET.ElementTree(urlset)
+        tree.write(tmp_file, encoding="utf-8", xml_declaration=True)
+
+    temp_path.replace(sitemap_path)
+
+    print(f"\nSitemap generated successfully at: {sitemap_path}")
+    print(f"Total URLs indexed: {len(seen_urls)}")
+
+    return sitemap_path
+
 
 if __name__ == "__main__":
-    # Point this to the root of the Therpia project
-    generate_sitemap("/Users/NickA/8. Therpia")
+    generate_sitemap()

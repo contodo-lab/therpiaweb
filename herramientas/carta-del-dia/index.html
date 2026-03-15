@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Carta del Día de Tarot | Therpia</title>
+    <meta name="description"
+        content="Descubre tu carta del día en Therpia. Una reflexión breve para ayudarte a conectar con tu intuición, tu energía y el momento que estás viviendo.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://therpia.cl/carta-del-dia/">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://therpia.cl/carta-del-dia/">
+    <meta property="og:title" content="Carta del Día de Tarot | Therpia">
+    <meta property="og:description"
+        content="Explora la carta del día y recibe una reflexión para conectar con tu intuición.">
+    <meta property="og:image" content="https://therpia.cl/images/og-carta-del-dia.jpg">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/tools.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Carta del Día de Tarot",
+      "url": "https://therpia.cl/carta-del-dia/",
+      "description": "Herramienta espiritual para descubrir la carta del día y reflexionar sobre su mensaje."
+    }
+    </script>
+</head>
+
+<body>
+
+    <!-- Menú de Navegación -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="/" class="logo" aria-label="Ir al inicio de Therpia">
+                <img src="/images/Logosf.png" alt="Logotipo de Therpia">
+            </a>
+
+            <button class="mobile-menu-btn" aria-label="Abrir menú" aria-expanded="false" id="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav-links" id="nav-links" aria-label="Navegación principal">
+
+                <div class="nav-item has-dropdown">
+                    <a href="/servicios/" class="nav-link">Servicios</a>
+                    <div class="dropdown-menu">
+                        <a href="/servicios/tarot/">Tarot</a>
+                        <a href="/servicios/reiki-a-distancia/">Reiki</a>
+                        <a href="/servicios/carta-astral/">Carta Astral</a>
+                    </div>
+                </div>
+
+                <a href="/guias-espirituales/">Guías espirituales</a>
+                <a href="/comunidad/">Comunidad</a>
+                <a href="/contacto/">Contacto</a>
+
+                <a href="https://wa.me/56XXXXXXXXX?text=Hola%20Therpia%20%F0%9F%8C%9F%20Quiero%20agendar%20una%20sesi%C3%B3n.%20%C2%BFPodr%C3%ADan%20orientarme%3F"
+                    class="btn btn-whatsapp nav-btn" target="_blank" rel="noopener noreferrer">
+                    Agenda tu sesión
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="tool-page">
+            <div class="container tool-container">
+
+                <p class="tool-kicker">Herramienta espiritual</p>
+                <h1 class="tool-title">Tu carta del día</h1>
+
+                <p class="tool-intro">
+                    Cada día tiene su propia energía. Esta carta no busca decirte qué pasará,
+                    sino darte una pausa, una señal y una reflexión para mirar tu día con más claridad.
+                </p>
+
+                <div class="card-area">
+                    <div class="tarot-card-shell">
+                        <div class="tarot-card is-back" id="tarotCard">
+                            <div class="tarot-card-inner">
+                                <div class="tarot-card-face tarot-card-back">
+                                    <span class="card-back-symbol">✦</span>
+                                </div>
+                                <div class="tarot-card-face tarot-card-front">
+                                    <div class="card-image-wrap">
+                                        <img id="cardImage" src="" alt="" loading="eager">
+                                    </div>
+                                    <div class="card-front-content">
+                                        <p class="card-arcana" id="cardArcana"></p>
+                                        <h2 class="card-name" id="cardName"></h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary draw-btn" id="drawBtn" type="button">
+                        Descubre el mensaje de hoy
+                    </button>
+
+                    <div class="card-reading" id="cardReading" hidden>
+                        <p class="reading-date" id="readingDate"></p>
+                        <p class="card-meaning" id="cardMeaning"></p>
+                        <p class="card-reflection" id="cardReflection"></p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="tool-seo-copy section-light">
+            <div class="container tool-copy-container">
+                <h2>¿Qué significa la carta del día?</h2>
+                <p>
+                    La carta del día es una forma simple de detenerte unos minutos y observar cómo te sientes,
+                    qué estás viviendo y qué energía parece acompañarte hoy. Muchas personas la usan como un
+                    pequeño ritual de mañana o de noche para reflexionar con más calma.
+                </p>
+
+                <h2>Cómo usar esta herramienta</h2>
+                <p>
+                    Respira, observa la carta, lee el mensaje y pregúntate qué parte de esa reflexión conecta con tu
+                    momento actual.
+                    No se trata de buscar una verdad absoluta, sino una guía breve para escuchar tu intuición.
+                </p>
+
+                <div class="tool-cta-box">
+                    <h3>¿Quieres una orientación más profunda?</h3>
+                    <p>
+                        Si buscas una lectura más personal, puedes explorar nuestras sesiones con especialistas en
+                        tarot.
+                    </p>
+                    <a href="/servicios/tarot/" class="btn btn-secondary">Ver sesiones de tarot</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer cargado dinámicamente -->
+    <div id="site-footer"></div>
+
+    <script src="/js/tarot-1-carta.js"></script>
+    <script src="/js/script.js"></script>
+    <script defer src="/js/layout.js?v=20260223"></script>
+</body>
+
+</html>

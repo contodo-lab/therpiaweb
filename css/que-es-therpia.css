@@ -1,0 +1,173 @@
+/* ==========================================================================
+   Qué es Therpia Page — Therpia
+   que-es-therpia.css
+   ========================================================================== */
+
+/* ── Hero ─────────────────────────────────────────────────────────────────── */
+/* Hero simple sin imagen de fondo */
+.hero-que-es {
+    background-color: var(--clr-bg-secondary);
+    min-height: auto;
+    padding-top: 9rem;
+    padding-bottom: 5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-que-es::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    right: -150px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(208, 168, 101, 0.18) 0%, rgba(212, 65, 142, 0.06) 60%, transparent 80%);
+    border-radius: 50%;
+    animation: float 12s ease-in-out infinite alternate;
+}
+
+.hero-que-es::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: -100px;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(212, 65, 142, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.hero-que-es .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* ── How it works steps (inline) ──────────────────────────────────────────── */
+.steps-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.steps-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+}
+
+.step-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    background-color: var(--clr-primary);
+    color: var(--clr-white);
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 6px 16px rgba(208, 168, 101, 0.3);
+    margin-top: 0.15rem;
+}
+
+.step-text {
+    font-size: 1.125rem;
+    color: var(--clr-text-muted);
+    line-height: 1.6;
+}
+
+/* ── Values grid (nuestro enfoque) ────────────────────────────────────────── */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+.value-pill {
+    background: var(--clr-white);
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border: 1px solid rgba(208, 168, 101, 0.15);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-pill:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(208, 168, 101, 0.12);
+}
+
+.value-pill .icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.value-pill h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+}
+
+.value-pill p {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+/* ── Specialist selection block ───────────────────────────────────────────── */
+.specialist-block {
+    background: linear-gradient(135deg, rgba(208, 168, 101, 0.08) 0%, rgba(212, 65, 142, 0.05) 100%);
+    border: 1px solid rgba(208, 168, 101, 0.2);
+    border-radius: 20px;
+    padding: 3rem 2.5rem;
+}
+
+.specialist-block h3 {
+    margin-bottom: 1rem;
+    color: var(--clr-primary);
+}
+
+.specialist-link {
+    color: var(--clr-primary);
+    font-weight: 600;
+}
+
+/* ── CTA final links ──────────────────────────────────────────────────────── */
+.internal-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2.5rem;
+    justify-content: center;
+}
+
+.internal-links a.btn {
+    min-width: 200px;
+}
+
+/* ── Responsive Overrides ─────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+    .specialist-block {
+        padding: 2rem 1.5rem;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .internal-links {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .internal-links a.btn {
+        width: 100%;
+        text-align: center;
+    }
+}

@@ -1,0 +1,190 @@
+/* ==========================================================================
+   Comunidad Page — Therpia
+   comunidad.css
+   ========================================================================== */
+
+/* ── Hero ─────────────────────────────────────────────────────────────────── */
+.hero-comunidad {
+    position: relative;
+    background-color: var(--clr-bg-secondary);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+}
+
+.hero-comunidad::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/comunidad-hero-bg.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.hero-comunidad::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(250, 250, 247, 0.4) 0%, rgba(250, 250, 247, 0.95) 100%);
+    z-index: 2;
+}
+
+.hero-comunidad .container {
+    position: relative;
+    z-index: 3;
+}
+
+/* Decorative Morphing Blob */
+.hero-decorative-shape {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(208, 168, 101, 0.15) 0%, rgba(212, 65, 142, 0) 70%);
+    top: -100px;
+    right: -200px;
+    border-radius: 50%;
+    z-index: 2;
+    animation: float 10s ease-in-out infinite alternate;
+}
+
+/* ── Typography & List ────────────────────────────────────────────────────── */
+.hero-text {
+    font-size: 1.125rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--clr-text-muted);
+}
+
+.service-card-text {
+    font-size: 1rem;
+    color: var(--clr-text-muted);
+}
+
+.audience-list {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 2rem auto 0;
+    text-align: left;
+}
+
+.audience-list li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.125rem;
+    color: var(--clr-text);
+}
+
+.audience-list li::before {
+    content: '✨';
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.25rem;
+}
+
+/* ── Explore Grid ─────────────────────────────────────────────────────────── */
+.explore-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.explore-card {
+    background: var(--clr-bg);
+    padding: 2.5rem 2rem;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    text-decoration: none;
+    color: var(--clr-text);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    border: 1px solid var(--clr-border);
+}
+
+.explore-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--clr-primary);
+}
+
+.explore-card h3 {
+    font-family: var(--ff-primary);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--clr-primary);
+}
+
+.explore-card p {
+    font-size: 1rem;
+    color: var(--clr-text-muted);
+    margin: 0;
+}
+
+/* ── CTA Buttons ──────────────────────────────────────────────────────────── */
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* ── Split Sections ───────────────────────────────────────────────────────── */
+.split-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 3rem;
+}
+
+.split-section.reverse {
+    flex-direction: row-reverse;
+}
+
+.split-content {
+    flex: 1 1 400px;
+    text-align: left;
+}
+
+.split-content h2 {
+    margin-bottom: 1.5rem;
+}
+
+.split-image {
+    flex: 1 1 400px;
+}
+
+.split-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    object-fit: cover;
+    aspect-ratio: 4/3;
+}
+
+/* ── Utilities ────────────────────────────────────────────────────────────── */
+.active-link {
+    color: var(--clr-primary) !important;
+}

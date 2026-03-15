@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Test Espiritual | Therpia</title>
+    <meta name="description"
+        content="Descubre en qué etapa de tu camino espiritual te encuentras con este test espiritual de Therpia. Recibe una lectura orientativa y explora sesiones que pueden ayudarte.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://therpia.cl/test-espiritual/">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://therpia.cl/test-espiritual/">
+    <meta property="og:title" content="Test Espiritual | Therpia">
+    <meta property="og:description"
+        content="Haz este test espiritual y descubre qué etapa de tu camino interior estás viviendo hoy.">
+    <meta property="og:image" content="https://therpia.cl/images/og-test-espiritual.jpg">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/guia.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Quiz",
+      "name": "Test Espiritual",
+      "url": "https://therpia.cl/test-espiritual/",
+      "description": "Cuestionario interactivo para descubrir en qué etapa del camino espiritual se encuentra una persona.",
+      "about": {
+        "@type": "Thing",
+        "name": "Espiritualidad y autoconocimiento"
+      }
+    }
+    </script>
+</head>
+
+<body>
+
+    <!-- Menú de Navegación -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="/" class="logo" aria-label="Ir al inicio de Therpia">
+                <img src="/images/Logosf.png" alt="Logotipo de Therpia">
+            </a>
+
+            <button class="mobile-menu-btn" aria-label="Abrir menú" aria-expanded="false" id="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav-links" id="nav-links" aria-label="Navegación principal">
+
+                <div class="nav-item has-dropdown">
+                    <a href="/servicios/" class="nav-link">Servicios</a>
+                    <div class="dropdown-menu">
+                        <a href="/servicios/tarot/">Tarot</a>
+                        <a href="/servicios/reiki-a-distancia/">Reiki</a>
+                        <a href="/servicios/carta-astral/">Carta Astral</a>
+                    </div>
+                </div>
+
+                <a href="/guias-espirituales/">Guías espirituales</a>
+                <a href="/comunidad/">Comunidad</a>
+                <a href="/contacto/">Contacto</a>
+
+                <a href="https://wa.me/56XXXXXXXXX?text=Hola%20Therpia%20%F0%9F%8C%9F%20Quiero%20agendar%20una%20sesi%C3%B3n.%20%C2%BFPodr%C3%ADan%20orientarme%3F"
+                    class="btn btn-whatsapp nav-btn" target="_blank" rel="noopener noreferrer">
+                    Agenda tu sesión
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Hero -->
+        <section class="tool-page">
+            <div class="container tool-container">
+
+                <div class="breadcrumb">
+                    <a href="/">Inicio</a>
+                    <span class="breadcrumb-sep">•</span>
+                    <span>Test espiritual</span>
+                </div>
+
+                <p class="tool-kicker">Herramienta espiritual</p>
+                <h1 class="tool-title">Test espiritual</h1>
+                <p class="tool-intro">
+                    A veces no necesitamos una gran respuesta, sino una mejor pregunta. Este test puede ayudarte
+                    a reconocer en qué etapa de tu camino espiritual te encuentras hoy y qué tipo de guía podría
+                    resonar más contigo.
+                </p>
+
+                <!-- Intro Screen -->
+                <section class="test-screen" id="testStartScreen">
+                    <div class="tool-cta-box">
+                        <h2>¿En qué etapa de tu camino espiritual estás?</h2>
+                        <p>
+                            Responde 8 preguntas breves. Al final recibirás una lectura orientativa sobre tu momento
+                            actual y algunas prácticas o sesiones que podrían ayudarte.
+                        </p>
+                        <button class="btn btn-primary btn-large" id="startTestBtn" type="button">
+                            Comenzar test
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Question Screen -->
+                <section class="test-screen" id="testQuestionScreen" hidden>
+                    <div class="card-reading is-visible" style="max-width: 820px;">
+                        <p class="reading-date" id="questionProgress">Pregunta 1 de 8</p>
+
+                        <div class="test-progress" aria-hidden="true"
+                            style="width:100%;height:10px;background:rgba(47,27,65,0.08);border-radius:999px;overflow:hidden;margin:0 auto 1.5rem;">
+                            <div id="progressFill"
+                                style="width:12.5%;height:100%;background:linear-gradient(90deg,var(--clr-primary),var(--clr-primary-hover));border-radius:999px;">
+                            </div>
+                        </div>
+
+                        <p id="questionCounter"
+                            style="font-size:0.95rem;font-weight:600;color:var(--clr-primary-hover);margin-bottom:1rem;">
+                            1/8
+                        </p>
+
+                        <h2 id="questionText" style="font-size:clamp(1.5rem,3vw,2.2rem);margin-bottom:1.5rem;">
+                            Pregunta del test
+                        </h2>
+
+                        <div id="answersContainer" class="test-answers"
+                            style="display:grid;gap:1rem;text-align:left;margin-bottom:1.75rem;">
+                        </div>
+
+                        <div class="test-actions"
+                            style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:1rem;">
+                            <button class="btn btn-secondary" id="prevQuestionBtn" type="button">
+                                Anterior
+                            </button>
+                            <button class="btn btn-primary" id="nextQuestionBtn" type="button" disabled>
+                                Siguiente
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Loading Screen -->
+                <section class="test-screen" id="testLoadingScreen" hidden>
+                    <div class="card-reading is-visible">
+                        <div style="font-size:2.5rem;margin-bottom:1rem;">✨</div>
+                        <h2 style="font-size:clamp(1.6rem,3vw,2.3rem);margin-bottom:0.75rem;">Analizando tus respuestas
+                        </h2>
+                        <p style="max-width:520px;margin:0 auto;">
+                            Observando tu energía, tu momento actual y el tipo de guía que podría resonar más contigo...
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Result Screen -->
+                <section class="test-screen" id="testResultScreen" hidden>
+                    <div class="card-reading is-visible" style="max-width: 820px;">
+                        <div id="resultIcon" style="font-size:3rem;margin-bottom:1rem;">🌙</div>
+                        <h2 id="resultTitle" style="font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:0.6rem;">
+                            Tu resultado
+                        </h2>
+                        <p id="resultSubtitle"
+                            style="font-size:1.05rem;font-weight:600;color:var(--clr-primary-hover);margin-bottom:1.1rem;">
+                            Subtítulo del resultado
+                        </p>
+                        <p id="resultDescription" class="card-meaning">
+                            Descripción del resultado.
+                        </p>
+                        <p id="resultAdvice" class="card-reflection">
+                            Consejo del resultado.
+                        </p>
+
+                        <div class="tool-cta-box" style="margin-top:1.75rem;">
+                            <h3 style="margin-bottom:0.75rem;">Sesiones que podrían resonar contigo</h3>
+                            <div id="resultServices"
+                                style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;">
+                            </div>
+                        </div>
+
+                        <div style="margin-top:1.5rem;display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;">
+                            <a href="/contacto/" class="btn btn-primary">Agendar una sesión</a>
+                            <button class="btn btn-secondary" id="restartTestBtn" type="button">
+                                Hacer test otra vez
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </section>
+
+        <!-- SEO Copy -->
+        <section class="tool-seo-copy section-light">
+            <div class="container tool-copy-container page-article">
+                <h2>¿Qué es un test espiritual?</h2>
+                <p>
+                    Un test espiritual es una herramienta de reflexión. No busca encasillarte ni decirte quién eres
+                    de forma definitiva. Su objetivo es ayudarte a observar con más claridad tu momento actual, tus
+                    necesidades interiores y el tipo de orientación que podría hacer más sentido para ti hoy.
+                </p>
+
+                <h2>¿Para qué sirve este test?</h2>
+                <p>
+                    Hay momentos en que sentimos curiosidad, confusión, cansancio emocional o una necesidad más profunda
+                    de entender lo que estamos viviendo. Este test está pensado para acompañar esa pausa y ayudarte a
+                    ponerle nombre al momento que estás atravesando.
+                </p>
+
+                <h2>Qué hacer después de ver tu resultado</h2>
+                <p>
+                    Puedes tomar este resultado como una pequeña brújula. Si algo resonó contigo, quizá sea una buena
+                    señal para explorar una sesión de tarot, reiki a distancia o carta astral con más profundidad.
+                    A veces una sola conversación puede abrir una mirada distinta.
+                </p>
+
+                <div class="tool-cta-box">
+                    <h3>¿Quieres dar el siguiente paso?</h3>
+                    <p>
+                        Explora nuestras sesiones y encuentra una práctica que acompañe tu momento actual con más
+                        profundidad y claridad.
+                    </p>
+                    <a href="/servicios/" class="btn btn-secondary">Ver servicios</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer cargado dinámicamente -->
+    <div id="site-footer"></div>
+
+    <script src="/js/script.js"></script>
+    <script defer src="/js/layout.js?v=20260223"></script>
+    <script src="/js/test-espiritual.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const answersContainer = document.getElementById("answersContainer");
+            if (!answersContainer) return;
+
+            const observer = new MutationObserver(() => {
+                const buttons = answersContainer.querySelectorAll(".test-answer-btn");
+                buttons.forEach((btn) => {
+                    btn.style.width = "100%";
+                    btn.style.textAlign = "left";
+                    btn.style.padding = "1rem 1.1rem";
+                    btn.style.borderRadius = "16px";
+                    btn.style.border = "1px solid rgba(47, 27, 65, 0.10)";
+                    btn.style.background = "rgba(250,250,247,0.9)";
+                    btn.style.color = "var(--clr-text-main)";
+                    btn.style.fontSize = "1rem";
+                    btn.style.lineHeight = "1.55";
+                    btn.style.fontFamily = "inherit";
+                    btn.style.cursor = "pointer";
+                    btn.style.transition = "all 0.25s ease";
+                    btn.style.boxShadow = "none";
+
+                    btn.addEventListener("mouseenter", () => {
+                        if (!btn.classList.contains("is-selected")) {
+                            btn.style.transform = "translateY(-2px)";
+                            btn.style.borderColor = "rgba(208, 168, 101, 0.35)";
+                            btn.style.background = "var(--clr-white)";
+                        }
+                    });
+
+                    btn.addEventListener("mouseleave", () => {
+                        if (!btn.classList.contains("is-selected")) {
+                            btn.style.transform = "translateY(0)";
+                            btn.style.borderColor = "rgba(47, 27, 65, 0.10)";
+                            btn.style.background = "rgba(250,250,247,0.9)";
+                        }
+                    });
+                });
+
+                const selectedButtons = answersContainer.querySelectorAll(".test-answer-btn.is-selected");
+                selectedButtons.forEach((btn) => {
+                    btn.style.background = "rgba(208, 168, 101, 0.12)";
+                    btn.style.borderColor = "rgba(208, 168, 101, 0.45)";
+                    btn.style.transform = "translateY(-1px)";
+                    btn.style.boxShadow = "0 10px 24px rgba(208, 168, 101, 0.10)";
+                });
+            });
+
+            observer.observe(answersContainer, {
+                childList: true,
+                subtree: true,
+                attributes: true,
+                attributeFilter: ["class"]
+            });
+        });
+    </script>
+</body>
+
+</html>
