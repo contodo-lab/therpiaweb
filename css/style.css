@@ -830,6 +830,18 @@ p {
 }
 
 @media (max-width: 768px) {
+    .navbar {
+        padding: 0.7rem 0;
+    }
+
+    .logo img {
+        height: 56px;
+    }
+
+    .navbar.scrolled {
+        padding: 0.5rem 0;
+    }
+
     .nav-links {
         position: fixed;
         top: 0;

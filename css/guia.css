@@ -947,3 +947,12 @@
     opacity: 0.7;
     cursor: not-allowed;
 }
+
+.widget-question-type {
+    margin-bottom: 1.5rem;
+}
+
+.widget-question-type select {
+    margin-top: 0.4rem;
+    padding: 0.4rem 0.6rem;
+}
