@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>OG Image Generator - Únete como especialista | Therpia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #111;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .og-canvas {
+            width: 1200px;
+            height: 630px;
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 82% 22%, rgba(208, 168, 101, 0.20), transparent 30%),
+                radial-gradient(circle at 14% 85%, rgba(212, 65, 142, 0.18), transparent 32%),
+                linear-gradient(135deg, #2F1B41 0%, #34174A 45%, #2B143C 100%);
+            color: #FAFAF7;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.45);
+        }
+
+        .orb-1,
+        .orb-2,
+        .orb-3 {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(8px);
+            z-index: 1;
+        }
+
+        .orb-1 {
+            width: 520px;
+            height: 520px;
+            top: -120px;
+            right: -60px;
+            background: radial-gradient(circle, rgba(208, 168, 101, 0.16) 0%, rgba(208, 168, 101, 0) 72%);
+        }
+
+        .orb-2 {
+            width: 650px;
+            height: 650px;
+            bottom: -250px;
+            left: -180px;
+            background: radial-gradient(circle, rgba(212, 65, 142, 0.18) 0%, rgba(212, 65, 142, 0) 72%);
+        }
+
+        .orb-3 {
+            width: 280px;
+            height: 280px;
+            top: 140px;
+            right: 180px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 75%);
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 78px 92px 62px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .logo {
+            height: 78px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .brand-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            line-height: 1;
+            font-weight: 700;
+            color: #D0A865;
+            letter-spacing: 0.4px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            margin-top: 34px;
+            padding: 10px 18px;
+            border-radius: 999px;
+            border: 1px solid rgba(208, 168, 101, 0.28);
+            background: rgba(255, 255, 255, 0.06);
+            color: #D0A865;
+            font-size: 19px;
+            font-weight: 600;
+        }
+
+        .main {
+            margin-top: 28px;
+            max-width: 890px;
+        }
+
+        .main h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 78px;
+            line-height: 0.98;
+            font-weight: 600;
+            letter-spacing: -1.4px;
+            color: #F8F5EF;
+            max-width: 900px;
+        }
+
+        .main p {
+            margin-top: 28px;
+            font-size: 31px;
+            line-height: 1.32;
+            font-weight: 300;
+            color: rgba(250, 250, 247, 0.88);
+            max-width: 860px;
+        }
+
+        .footer {
+            margin-top: auto;
+            padding-top: 26px;
+            border-top: 2px solid rgba(208, 168, 101, 0.22);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .tags {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            flex-wrap: wrap;
+            color: #D0A865;
+            font-size: 23px;
+            font-weight: 500;
+        }
+
+        .tags span {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .site {
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: 1.1px;
+            color: #FAFAF7;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="og-canvas">
+        <div class="orb-1"></div>
+        <div class="orb-2"></div>
+        <div class="orb-3"></div>
+
+        <div class="content">
+            <div class="header">
+                <img src="images/Logosf.png" alt="Therpia Logo" class="logo">
+                <div class="brand-name">Therpia</div>
+            </div>
+
+            <div class="eyebrow">Únete como especialista</div>
+
+            <div class="main">
+                <h1>Únete a la red de especialistas de Therpia</h1>
+                <p>Buscamos perfiles en tarot, astrología, reiki y terapias afines para sesiones online.</p>
+            </div>
+
+            <div class="footer">
+                <div class="tags">
+                    <span>🔮 Tarot</span>
+                    <span>🌙 Astrología</span>
+                    <span>✨ Reiki</span>
+                    <span>🕊️ Terapias afines</span>
+                </div>
+                <div class="site">www.therpia.cl</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

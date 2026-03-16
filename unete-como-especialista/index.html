@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Únete como especialista | Therpia</title>
+    <meta name="title" content="Únete como especialista | Therpia">
+    <meta name="description"
+        content="Postula como especialista en Therpia y conecta con personas que buscan claridad emocional, bienestar espiritual y autoconocimiento a través de sesiones online.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://therpia.cl/unete-como-especialista/">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#FAFAF7">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_CL">
+    <meta property="og:url" content="https://therpia.cl/unete-como-especialista/">
+    <meta property="og:title" content="Únete como especialista | Therpia">
+    <meta property="og:description"
+        content="Forma parte de Therpia como especialista en tarot, astrología, reiki, numerología y otras prácticas de bienestar espiritual.">
+    <meta property="og:image" content="https://therpia.cl/images/og-unete-especialista.jpg">
+    <meta property="og:site_name" content="Therpia">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Únete como especialista | Therpia">
+    <meta name="twitter:description"
+        content="Postula como especialista en Therpia y conecta con personas que buscan bienestar espiritual y claridad emocional.">
+    <meta name="twitter:image" content="https://therpia.cl/images/og-unete-especialista.jpg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <style>
+        .specialist-hero {
+            min-height: auto;
+            padding: 10rem 0 6rem;
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(208, 168, 101, 0.10), transparent 26%),
+                radial-gradient(circle at 80% 25%, rgba(212, 65, 142, 0.08), transparent 22%),
+                linear-gradient(180deg, #FAFAF7 0%, #F3EFE9 100%);
+        }
+
+        .specialist-hero-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .specialist-hero-copy {
+            max-width: 700px;
+        }
+
+        .specialist-hero-copy p {
+            font-size: 1.18rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-note {
+            font-size: 0.98rem;
+            color: var(--clr-text-muted);
+            margin-top: 1rem;
+            margin-bottom: 0;
+        }
+
+        .specialist-panel {
+            background: rgba(255, 255, 255, 0.75);
+            border: 1px solid rgba(47, 27, 65, 0.08);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: 0 20px 50px rgba(47, 27, 65, 0.08);
+            backdrop-filter: blur(8px);
+        }
+
+        .specialist-panel h3 {
+            margin-bottom: 1rem;
+        }
+
+        .specialist-panel ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .specialist-panel li {
+            padding: 0.85rem 0;
+            border-bottom: 1px solid rgba(47, 27, 65, 0.08);
+            color: var(--clr-text-muted);
+            font-size: 1rem;
+        }
+
+        .specialist-panel li:last-child {
+            border-bottom: none;
+        }
+
+        .mini-highlight {
+            display: inline-block;
+            margin-bottom: 1rem;
+            padding: 0.4rem 0.9rem;
+            border-radius: 999px;
+            background: rgba(208, 168, 101, 0.14);
+            color: var(--clr-text-main);
+            font-size: 0.88rem;
+            font-weight: 600;
+        }
+
+        .specialist-types .service-card {
+            text-align: left;
+            padding: 2rem;
+        }
+
+        .specialist-types .service-icon {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .quiet-box {
+            background: var(--clr-white);
+            border: 1px solid rgba(47, 27, 65, 0.06);
+            border-radius: 20px;
+            padding: 2rem;
+        }
+
+        .quiet-box h3 {
+            margin-bottom: 0.8rem;
+        }
+
+        .split-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .final-cta-box {
+            max-width: 860px;
+            margin: 0 auto;
+            text-align: center;
+            background: var(--clr-white);
+            border: 1px solid rgba(47, 27, 65, 0.06);
+            border-radius: 24px;
+            padding: 3rem 2rem;
+            box-shadow: 0 12px 35px rgba(47, 27, 65, 0.05);
+        }
+
+        .final-cta-box p {
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-row {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 992px) {
+            .specialist-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .specialist-hero-copy {
+                max-width: 100%;
+            }
+
+            .split-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .specialist-hero {
+                padding: 8.5rem 0 4.5rem;
+            }
+
+            .specialist-panel {
+                padding: 1.5rem;
+            }
+
+            .final-cta-box {
+                padding: 2.2rem 1.25rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="/" class="logo">
+                <img src="/images/Logosf.png" alt="Logotipo de Therpia">
+            </a>
+
+            <button class="mobile-menu-btn" aria-label="Abrir menú" id="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav-links" id="nav-links">
+                <a href="/servicios/">Servicios</a>
+                <a href="/guias-espirituales/">Guías espirituales</a>
+                <a href="/comunidad/">Comunidad</a>
+                <a href="/contacto/">Contacto</a>
+                <a href="https://wa.me/56912345678?text=Hola%20Therpia%20%F0%9F%8C%9F%20Quiero%20hablar%20sobre%20sus%20sesiones"
+                    class="btn btn-primary">Hablar por WhatsApp</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="specialist-hero">
+        <div class="container specialist-hero-grid">
+            <div class="specialist-hero-copy">
+                <div class="breadcrumb">
+                    <a href="/">Inicio</a>
+                    <span class="breadcrumb-sep">•</span>
+                    <span>Únete como especialista</span>
+                </div>
+
+                <span class="hero-tag">Especialistas Therpia</span>
+                <h1 class="hero-title">Únete como especialista en Therpia</h1>
+                <p>
+                    Si acompañas a personas a través del tarot, la astrología, el reiki u otras prácticas de bienestar
+                    espiritual, en Therpia queremos conocerte.
+                </p>
+                <p>
+                    Estamos construyendo una plataforma cálida, clara y confiable, donde personas de Chile y
+                    Latinoamérica puedan encontrar especialistas seleccionados para sesiones online.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="https://wa.me/56912345678?text=Hola%20Therpia,%20quiero%20postular%20como%20especialista"
+                        class="btn btn-whatsapp btn-large">Postular por WhatsApp</a>
+                    <a href="#como-funciona" class="btn btn-secondary btn-large">Cómo funciona</a>
+                </div>
+
+                <p class="hero-note">
+                    Buscamos especialistas con experiencia, sensibilidad humana y disposición para trabajar en un
+                    espacio serio y bien cuidado.
+                </p>
+            </div>
+
+            <div class="specialist-panel">
+                <span class="mini-highlight">Lo que buscamos</span>
+                <h3>Perfiles que encajan bien en Therpia</h3>
+                <ul>
+                    <li>Especialistas con experiencia real en su práctica</li>
+                    <li>Buen trato, empatía y ética profesional</li>
+                    <li>Disposición para atender sesiones online</li>
+                    <li>Interés en crecer junto a una plataforma en expansión</li>
+                    <li>Capacidad de acompañar procesos personales con respeto</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Qué es Therpia -->
+    <section class="about-section section-padding fade-in">
+        <div class="container about-container text-center">
+            <div class="section-header">
+                <h2>¿Qué es Therpia?</h2>
+                <p>
+                    Therpia es una plataforma digital que conecta personas que buscan claridad emocional, bienestar
+                    espiritual y autoconocimiento con especialistas en distintas prácticas y terapias.
+                </p>
+                <p>
+                    Nuestro foco no es llenar un directorio. Nuestro foco es construir una experiencia confiable, donde
+                    la persona se sienta contenida y donde el especialista correcto pueda destacar.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beneficios -->
+    <section class="benefits-section section-padding fade-in">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>¿Por qué unirte a Therpia?</h2>
+                <p>
+                    Queremos construir una plataforma que beneficie tanto a las personas que buscan orientación como a
+                    los especialistas que entregan valor real.
+                </p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">✨</div>
+                    <div class="benefit-content">
+                        <h3>Mayor visibilidad</h3>
+                        <p>
+                            Tu perfil podrá ser descubierto por personas que ya están buscando apoyo espiritual y
+                            emocional online.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">🤝</div>
+                    <div class="benefit-content">
+                        <h3>Un espacio confiable</h3>
+                        <p>
+                            No buscamos volumen vacío. Queremos una plataforma bien curada, donde la calidad del
+                            especialista importe.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">💻</div>
+                    <div class="benefit-content">
+                        <h3>Sesiones online</h3>
+                        <p>
+                            La propuesta está pensada para facilitar sesiones a distancia, con una experiencia simple y
+                            accesible.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">🌿</div>
+                    <div class="benefit-content">
+                        <h3>Marca con enfoque humano</h3>
+                        <p>
+                            Therpia busca transmitir calma, claridad y contención, lejos del caos y la improvisación de
+                            otras plataformas.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">📈</div>
+                    <div class="benefit-content">
+                        <h3>Proyecto en crecimiento</h3>
+                        <p>
+                            Estamos creando contenido, páginas de servicios y rutas de descubrimiento para atraer nuevas
+                            consultas a la plataforma.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">🫶</div>
+                    <div class="benefit-content">
+                        <h3>Personas con intención real</h3>
+                        <p>
+                            Queremos atraer personas que lleguen con una búsqueda genuina y con interés real en tomar
+                            una sesión.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tipos de especialistas -->
+    <section class="services-section specialist-types section-padding fade-in">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Especialistas que estamos buscando</h2>
+                <p>
+                    Hoy queremos sumar perfiles alineados con bienestar espiritual, autoconocimiento y acompañamiento
+                    emocional.
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🔮</div>
+                    <h3>Tarot</h3>
+                    <p>Lecturas orientadas a claridad emocional, decisiones, relaciones y procesos personales.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🌙</div>
+                    <h3>Astrología</h3>
+                    <p>Cartas astrales, tránsitos, compatibilidad y procesos de autoconocimiento.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">💫</div>
+                    <h3>Reiki</h3>
+                    <p>Sesiones energéticas enfocadas en equilibrio, calma, liberación y bienestar interior.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📖</div>
+                    <h3>Registros Akáshicos</h3>
+                    <p>Acompañamiento para exploración personal, mensajes y comprensión de procesos internos.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🔢</div>
+                    <h3>Numerología</h3>
+                    <p>Lecturas y análisis orientados a identidad, ciclos de vida y propósito personal.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🕊️</div>
+                    <h3>Otras terapias afines</h3>
+                    <p>Meditación guiada, canalización, sanación energética, terapia transpersonal y enfoques
+                        complementarios.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cómo funciona -->
+    <section class="steps-section section-padding fade-in" id="como-funciona">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Cómo funciona el proceso</h2>
+                <p>
+                    Queremos que postular sea simple, pero también cuidar bien la calidad de la plataforma.
+                </p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Escríbenos</h3>
+                    <p>Nos contactas por WhatsApp contándonos tu práctica, experiencia y forma de trabajar.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Revisamos tu perfil</h3>
+                    <p>Evaluamos si tu propuesta encaja con el tipo de experiencia que queremos construir en Therpia.
+                    </p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Conversamos contigo</h3>
+                    <p>Si hay afinidad, coordinamos una conversación breve para conocerte mejor.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Definimos siguientes pasos</h3>
+                    <p>Si ambas partes ven encaje, avanzamos con incorporación, perfil y forma de colaboración.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filtro de calidad -->
+    <section class="section-padding section-light fade-in">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Qué valoramos en un especialista</h2>
+                <p>
+                    Más allá de la técnica, nos importa mucho la forma en que acompañas a las personas.
+                </p>
+            </div>
+
+            <div class="split-grid">
+                <div class="quiet-box">
+                    <h3>Buscamos personas que</h3>
+                    <ul class="check-list">
+                        <li><span>✓</span><span>Tengan experiencia real en su práctica</span></li>
+                        <li><span>✓</span><span>Trabajen desde el respeto, la escucha y la contención</span></li>
+                        <li><span>✓</span><span>Puedan conectar bien con sesiones online</span></li>
+                        <li><span>✓</span><span>Valoren una marca cuidada y profesional</span></li>
+                        <li><span>✓</span><span>Quieran crecer junto a una plataforma seria</span></li>
+                    </ul>
+                </div>
+
+                <div class="quiet-box">
+                    <h3>Lo que queremos evitar</h3>
+                    <ul class="check-list">
+                        <li><span>•</span><span>Perfiles improvisados o poco consistentes</span></li>
+                        <li><span>•</span><span>Promesas exageradas o enfoque poco ético</span></li>
+                        <li><span>•</span><span>Mal trato, poca empatía o comunicación confusa</span></li>
+                        <li><span>•</span><span>Falta de compromiso con la experiencia del usuario</span></li>
+                        <li><span>•</span><span>Interés solo en aparecer, sin construir algo a largo plazo</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA final -->
+    <section class="cta-section section-padding fade-in">
+        <div class="container">
+            <div class="final-cta-box">
+                <h2>¿Te gustaría ser parte de Therpia?</h2>
+                <p>
+                    Si sientes que tu trabajo puede aportar valor real a personas que están buscando orientación,
+                    claridad o bienestar interior, nos encantaría conocerte.
+                </p>
+                <p>
+                    Escríbenos por WhatsApp y cuéntanos quién eres, qué práctica ofreces y cómo trabajas.
+                </p>
+
+                <div class="btn-row">
+                    <a href="https://wa.me/56912345678?text=Hola%20Therpia,%20quiero%20postular%20como%20especialista"
+                        class="btn btn-whatsapp btn-large">Quiero postular</a>
+                    <a href="/contacto/" class="btn btn-secondary btn-large">Ir a contacto</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer cargado dinámicamente -->
+    <div id="site-footer"></div>
+
+    <script src="/js/script.js"></script>
+    <script defer src="/js/layout.js?v=20260223"></script>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.getElementById('nav-links');
+        const fadeElements = document.querySelectorAll('.fade-in');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 30) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenuBtn.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuBtn.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('appear');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        fadeElements.forEach(el => observer.observe(el));
+    </script>
+
+</body>
+
+</html>
