@@ -956,3 +956,246 @@
     margin-top: 0.4rem;
     padding: 0.4rem 0.6rem;
 }
+
+/* Shared styles for all Guia articles */
+
+/* Article Hero */
+.article-hero {
+    min-height: 60vh;
+    padding-top: 9rem;
+    padding-bottom: 6rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Dark overlay */
+.article-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            rgba(22, 10, 40, 0.3) 0%,
+            rgba(22, 10, 40, 0.75) 70%,
+            rgba(22, 10, 40, 0.9) 100%);
+    z-index: 1;
+}
+
+.article-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 860px;
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.article-hero-content .hero-tag {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    background-color: rgba(208, 168, 101, 0.15);
+    color: var(--clr-primary);
+    border: 1px solid rgba(208, 168, 101, 0.4);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.article-hero-content h1 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    color: #ffffff;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+    line-height: 1.2;
+}
+
+.article-hero-content .article-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Breadcrumb strip */
+.breadcrumb-bar {
+    background-color: var(--clr-white);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 1rem 0;
+}
+
+.breadcrumb-bar .breadcrumb {
+    font-size: 0.875rem;
+    color: var(--clr-text-muted);
+    margin: 0;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.breadcrumb-bar .breadcrumb a {
+    color: var(--clr-text-muted);
+}
+
+.breadcrumb-bar .breadcrumb a:hover {
+    color: var(--clr-primary);
+}
+
+.breadcrumb-sep {
+    color: var(--clr-primary);
+    opacity: 0.5;
+}
+
+/* Article Body */
+.article-body {
+    background-color: var(--clr-white);
+    padding: 5rem 0;
+}
+
+.article-content {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.article-content p {
+    font-size: 1.125rem;
+    line-height: 1.9;
+    color: var(--clr-text-muted);
+    margin-bottom: 1.4rem;
+}
+
+.article-content p strong {
+    color: var(--clr-text-main);
+    font-weight: 600;
+}
+
+.article-content h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--clr-text-main);
+    margin-top: 3.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(208, 168, 101, 0.2);
+}
+
+.article-content ul {
+    margin: 1rem 0 1.5rem 1.5rem;
+    list-style: none;
+    padding-left: 0;
+}
+
+.article-content ul li {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--clr-text-muted);
+    padding: 0.4rem 0 0.4rem 1.8rem;
+    position: relative;
+}
+
+.article-content ul li::before {
+    content: "✦";
+    position: absolute;
+    left: 0;
+    color: var(--clr-primary);
+    font-size: 0.75rem;
+    top: 0.65rem;
+}
+
+/* Article Image (inline) */
+.article-image {
+    margin: 3rem 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.article-image img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* Signal Number Titles */
+.signal-number {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    background-color: var(--clr-primary);
+    color: white;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 36px;
+    text-align: center;
+    margin-right: 0.75rem;
+    vertical-align: middle;
+    flex-shrink: 0;
+}
+
+.signal-title {
+    display: flex;
+    align-items: center;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+.signal-title h2 {
+    border-bottom: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* CTA Block */
+.article-cta {
+    background: linear-gradient(135deg, rgba(208, 168, 101, 0.1) 0%, rgba(212, 65, 142, 0.05) 100%);
+    border: 1px solid rgba(208, 168, 101, 0.25);
+    border-radius: 16px;
+    padding: 3.5rem 3rem;
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.article-cta h3 {
+    font-size: 1.8rem;
+    color: var(--clr-text-main);
+    margin-bottom: 1rem;
+}
+
+.article-cta p {
+    max-width: 540px;
+    margin: 0 auto 2rem;
+    color: var(--clr-text-muted);
+}
+
+.article-cta .btn {
+    margin: 4px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .article-hero {
+        min-height: 50vh;
+        padding-top: 7rem;
+        padding-bottom: 3rem;
+    }
+
+    .article-hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .article-content h2 {
+        font-size: 1.4rem;
+    }
+
+    .article-cta {
+        padding: 2.5rem 1.5rem;
+    }
+}
