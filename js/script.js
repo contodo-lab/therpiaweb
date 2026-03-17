@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- Sticky Navbar ---
+    // ==========================================
+    // 1. STICKY NAVBAR
+    // ==========================================
     const navbar = document.getElementById('navbar');
 
     window.addEventListener('scroll', () => {
@@ -11,7 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- Mobile Menu Toggle ---
+    // ==========================================
+    // 2. MOBILE MENU TOGGLE
+    // ==========================================
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const navLinks = document.getElementById('nav-links');
     const links = document.querySelectorAll('.nav-links a');
@@ -33,7 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Scroll Fade In Animation ---
+    // ==========================================
+    // 3. SCROLL FADE IN ANIMATION
+    // ==========================================
     const faders = document.querySelectorAll('.fade-in');
 
     const appearOptions = {
@@ -43,9 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const appearOnScroll = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
-            if (!entry.isIntersecting) {
-                return;
-            } else {
+            if (entry.isIntersecting) {
                 entry.target.classList.add('appear');
                 observer.unobserve(entry.target);
             }
@@ -66,4 +70,37 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, 100);
+
+    // ==========================================
+    // 4. WHATSAPP CONVERSION ENGINE
+    // ==========================================
+    const tooltip = document.getElementById("wa-tooltip");
+
+    // SAFETY CHECK: Only run this logic if the WhatsApp HTML exists on the page
+    if (tooltip) {
+        let triggered = false;
+
+        const showTooltip = () => {
+            if (!triggered && window.innerWidth < 768) { // Only trigger on mobile
+                tooltip.classList.remove("hidden");
+                triggered = true;
+
+                // Auto-hide after 8 seconds 
+                setTimeout(() => {
+                    tooltip.classList.add("hidden");
+                }, 8000);
+            }
+        };
+
+        // Trigger 1: Time-based (12 seconds)
+        setTimeout(showTooltip, 12000);
+
+        // Trigger 2: Scroll-based (35%)
+        window.addEventListener("scroll", () => {
+            const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            if (scrollPercent > 35) {
+                showTooltip();
+            }
+        });
+    }
 });

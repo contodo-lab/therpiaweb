@@ -988,3 +988,72 @@ p {
 .dropdown-menu a:hover {
     background: rgba(0, 0, 0, 0.04);
 }
+
+
+/* ==========================================================================
+   WHATSAPP FLOATING BUTTON
+   ========================================================================== */
+
+/* Mobile-first variables */
+:root {
+    --wa-green: #25D366;
+    --wa-green-hover: #1EBE5D;
+}
+
+/* Hide entirely on desktop if you strictly want mobile-only */
+@media (min-width: 768px) {
+    .wa-container {
+        display: none !important;
+    }
+}
+
+.wa-container {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.wa-button {
+    width: 56px;
+    height: 56px;
+    background-color: var(--wa-green);
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.wa-button:active {
+    transform: scale(0.95);
+}
+
+.wa-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.wa-tooltip {
+    background-color: #ffffff;
+    color: #333333;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    white-space: nowrap;
+}
+
+.wa-tooltip.hidden {
+    opacity: 0;
+    transform: translateX(20px);
+    pointer-events: none;
+}
