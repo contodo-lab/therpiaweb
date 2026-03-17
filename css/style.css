@@ -214,6 +214,24 @@ p {
     width: 100%;
 }
 
+.nav-social {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--clr-text-muted);
+    transition: color var(--transition-speed) ease;
+}
+
+.nav-social:hover {
+    color: var(--clr-primary);
+}
+
+.nav-social svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
 .mobile-menu-btn {
     display: none;
     background: none;
@@ -444,6 +462,26 @@ p {
 
 .footer-whatsapp-link:hover {
     color: var(--clr-primary-hover);
+}
+
+.footer-social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.98rem;
+    font-weight: 500;
+    color: var(--clr-text-muted);
+    transition: color var(--transition-speed) ease;
+}
+
+.footer-social-link:hover {
+    color: var(--clr-primary);
+}
+
+.footer-social-link svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
 }
 
 .footer-links {

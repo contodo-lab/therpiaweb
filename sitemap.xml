@@ -91,11 +91,6 @@
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://therpia.cl/og-image-unete.html</loc>
-        <lastmod>2026-03-17</lastmod>
-        <priority>0.7</priority>
-    </url>
-    <url>
         <loc>https://therpia.cl/politica-de-privacidad/</loc>
         <lastmod>2026-03-17</lastmod>
         <priority>0.7</priority>
@@ -121,7 +116,27 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://therpia.cl/servicios/tarot/amor/</loc>
+        <lastmod>2026-03-17</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://therpia.cl/servicios/tarot/</loc>
+        <lastmod>2026-03-17</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://therpia.cl/servicios/tarot/puerto-montt/</loc>
+        <lastmod>2026-03-17</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://therpia.cl/servicios/tarot/puerto-varas/</loc>
+        <lastmod>2026-03-17</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://therpia.cl/servicios/tarot/santiago/</loc>
         <lastmod>2026-03-17</lastmod>
         <priority>0.8</priority>
     </url>
