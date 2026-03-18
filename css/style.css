@@ -182,7 +182,7 @@ p {
 }
 
 .logo img {
-    height: 80px;
+    height: 70px;
     /* Tamaño del logo */
     width: auto;
     object-fit: contain;
