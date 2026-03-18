@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     background-color: var(--clr-bg-main);
-    background-image: url('../images/servicios-hero-bg.png');
+    background-image: url('/images/servicios-hero-bg.png');
     background-size: cover;
     background-position: center;
     padding-top: 9rem;
@@ -785,18 +785,22 @@
         padding-top: 6rem;
         min-height: auto;
     }
+
     .tarot-hero .hero-grid {
         display: flex;
         flex-direction: column;
         gap: 2rem;
     }
+
     .tarot-hero .hero-visual {
         order: 2;
     }
+
     .tarot-hero .hero-content {
         order: 1;
         text-align: center;
     }
+
     .tarot-hero .hero-points {
         text-align: left;
         max-width: 400px;
@@ -808,7 +812,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url('../images/comunidad-hero-bg.png');
+    background-image: url('/images/comunidad-hero-bg.png');
     background-size: cover;
     background-position: center;
     opacity: 0.12;
@@ -1112,13 +1116,35 @@
 }
 
 /* Utility Classes */
-.max-w-800 { max-width: 800px; }
-.mx-auto { margin-left: auto; margin-right: auto; }
-.justify-center { justify-content: center; }
-.mt-4 { margin-top: 2rem; }
-.mb-4 { margin-bottom: 2rem; }
-.text-center { text-align: center; }
-.small { font-size: 0.85rem; opacity: 0.8; }
+.max-w-800 {
+    max-width: 800px;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.mt-4 {
+    margin-top: 2rem;
+}
+
+.mb-4 {
+    margin-bottom: 2rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.small {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
 
 @media (max-width: 768px) {
     .info-needs-grid {
