@@ -1064,11 +1064,31 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 0.2s ease, background-color 0.2s ease;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    animation: wa-pulse 2.5s infinite;
+}
+
+.wa-button:hover {
+    background-color: var(--wa-green-hover);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.3);
+    animation: none;
 }
 
 .wa-button:active {
-    transform: scale(0.95);
+    transform: scale(0.95) translateY(0);
+}
+
+@keyframes wa-pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
 }
 
 .wa-icon {
